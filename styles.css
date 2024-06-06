@@ -1,5 +1,4 @@
-/* styles.css */
-
+/* General styles */
 body {
     font-family: "Lato", sans-serif;
     margin: 0;
@@ -11,25 +10,29 @@ header {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 5px;
     width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar {
     overflow: hidden;
-    background-color: #333;
+    background-color: #444;
     position: fixed;
-    top: 60px; /* Adjusted to start below the header */
+    top:80px;
     width: 100%;
-    z-index: 2;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5px;
 }
 
-.nav-left {
-    float: left;
-}
-
-.nav-right {
-    float: right;
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
 }
 
 .nav-toggle {
@@ -45,50 +48,42 @@ header {
     background-color: #555;
 }
 
-.left-sidebar {
+/* Sidebar styles */
+.sidebar {
     height: 100%;
     width: 0;
     position: fixed;
     z-index: 1;
-    top: 60px;
-    left: 0;
+    top: 135px; /* Below the header and navbar */
     background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
-    padding-left: 15px;
+    padding-top: 20px;
+}
+
+.left-sidebar {
+    left: 0;
 }
 
 .right-sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 60px;
     right: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    padding-right: 15px;
 }
 
 .sidebar h2 {
     color: white;
-    margin-left: 15px;
+    padding-left: 15px;
 }
 
-.sidebar .tile-options {
+.tile-options {
     display: flex;
-    margin: 10px;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: space-between; /* Ensures equal spacing between cards */
+    padding: 0 20px;
 }
 
 .card {
     background-color: white;
-    width: calc(50% - 5px); /* Adjusted to fit two cards per row */
+    width: calc(50% - 10px); /* Two cards per row */
     margin-bottom: 10px;
     cursor: pointer;
     transition: 0.3s;
@@ -102,12 +97,6 @@ header {
 .card .container {
     padding: 10px;
     text-align: center;
-}
-
-@media (max-width: 768px) {
-    .card {
-        width: 100%; /* Display one card per row on smaller screens */
-    }
 }
 
 .card:hover {
@@ -124,23 +113,59 @@ header {
 }
 
 #main {
-    transition: margin-left .5s;
     padding: 16px;
-    margin-top: 120px; /* Adjusted to start below the header and toggle navigation */
+    margin-top: 350px; /* Space for header and navbar */
+    text-align: center;
 }
 
-.container {
+.visualizer-container {
     position: relative;
+    max-width: 800px; /* Adjust based on your preference */
+    margin: 0 auto;
 }
 
-
-.container img {
-    position: fixed;
+.visualizer-container img {
+    position: absolute;
     max-width: 100%;
-    max-height: calc(100vh - 120px); /* Adjusted to fit within viewport */
+    max-height: calc(100vh - 160px); /* Adjusted to fit within viewport */
     width: auto;
     height: auto;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .card {
+        width: 100%; /* Full width cards on smaller screens */
+    }
+
+    .sidebar h2 {
+        padding-left: 10px;
+    }
+
+    .tile-options {
+        padding: 0 10px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .visualizer-container img {
+        max-height: calc(100vh - 160px); /* Adjust based on header and navbar height */
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-toggle {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .visualizer-container img {
+        max-height: calc(100vh - 160px); /* Adjust based on header and navbar height */
+    }
 }
