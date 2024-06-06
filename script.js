@@ -1,43 +1,43 @@
-document.getElementById('floor-select').addEventListener('change', function () {
-	var floorImage = document.getElementById('floor')
-	floorImage.style.opacity = 0 // Transition effect
-	setTimeout(
-		function () {
-			floorImage.src = this.value
-			floorImage.style.opacity = 1
-		}.bind(this),
-		300
-	) // Wait for transition to complete
-})
+// script.js
 
-document.getElementById('wall-select').addEventListener('change', function () {
-	var wallImage = document.getElementById('wall')
-	wallImage.style.opacity = 0 // Transition effect
-	setTimeout(
-		function () {
-			wallImage.src = this.value
-			wallImage.style.opacity = 1
-		}.bind(this),
-		300
-	) // Wait for transition to complete
-})
+let currentSidebar = null;
 
-document.getElementById('reset-button').addEventListener('click', function () {
-	var floorSelect = document.getElementById('floor-select')
-	var wallSelect = document.getElementById('wall-select')
-	var floorImage = document.getElementById('floor')
-	var wallImage = document.getElementById('wall')
+function toggleNav(sidebarId) {
+    if (currentSidebar !== sidebarId) {
+        if (currentSidebar) {
+            closeNav(currentSidebar);
+        }
+        openNav(sidebarId);
+        currentSidebar = sidebarId;
+    } else {
+        closeNav(sidebarId);
+        currentSidebar = null;
+    }
+}
 
-	floorSelect.selectedIndex = 0
-	wallSelect.selectedIndex = 0
+function openNav(sidebarId) {
+    document.getElementById(sidebarId).style.width = "300px";
+    document.getElementById("main").style.transition = "margin-left 0.5s, margin-right 0.5s";
+    document.getElementById("main").style.marginLeft = sidebarId === 'wall-sidebar' ? "300px" : "0";
+    document.getElementById("main").style.marginRight = sidebarId === 'floor-sidebar' ? "300px" : "0";
+}
 
-	floorImage.style.opacity = 0
-	wallImage.style.opacity = 0
+function closeNav(sidebarId) {
+    document.getElementById(sidebarId).style.width = "0";
+    document.getElementById("main").style.transition = "margin-left 0.5s, margin-right 0.5s";
+    document.getElementById("main").style.marginLeft = "0";
+    document.getElementById("main").style.marginRight = "0";
+}
 
-	setTimeout(function () {
-		floorImage.src = ''
-		wallImage.src = ''
-		floorImage.style.opacity = 1
-		wallImage.style.opacity = 1
-	}, 300)
-})
+
+function updateFloor(imageSrc) {
+    const floorImage = document.getElementById("floor");
+    floorImage.src = imageSrc;
+    closeNav('floor-sidebar');
+}
+
+function updateWall(imageSrc) {
+    const wallImage = document.getElementById("wall");
+    wallImage.src = imageSrc;
+    closeNav('wall-sidebar');
+}
