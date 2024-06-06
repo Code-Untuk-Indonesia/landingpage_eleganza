@@ -2,111 +2,859 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualizer</title>
-    <link rel="stylesheet" href="styles.css">
+	<meta charset="utf-8" />
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<title>Eleganza Tile Indonesia</title>
+	<meta content="" name="description" />
+	<meta content="" name="keywords" />
+
+	<!-- Favicons -->
+	<link href="assets/img/BG PUTIH.png" rel="icon" />
+	<link href="assets/img/Landscape Logo colour WHT.png" rel="apple-touch-icon" />
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com" rel="preconnect" />
+	<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet" />
+
+	<!-- Vendor CSS Files -->
+	<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+	<link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+	<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+	<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+	<!-- Main CSS File -->
+	<link href="assets/css/main.css" rel="stylesheet" />
 </head>
 
-<body>
-    <header>
-        <h1>Visualizer</h1>
-    </header>
-
-    <nav class="navbar">
-        <div class="nav-left">
-            <span class="nav-toggle" onclick="toggleNav('wall-sidebar')">Ganti Wall</span>
-        </div>
-        <div class="nav-right">
-            <span class="nav-toggle" onclick="toggleNav('floor-sidebar')">Ganti Floor</span>
-        </div>
-    </nav>
-
-    <div id="wall-sidebar" class="sidebar left-sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('floor-sidebar')">&times;</a>
-        <h2>Pilih Lantai:</h2>
-        <div class="tile-options">
-            <div class="card" onclick="updateWall('MATERIAL/dinding_birmingham 60x120.png')">
-                <img src="birmingham.webp" alt="Dinding Birmingham 60x120">
-                <div class="container">
-                    <h4>Dinding Birmingham 60x120</h4>
-                </div>
-            </div>
-            <div class="card" onclick="updateWall('MATERIAL/dinding_hermes 75x150.png')">
-                <img src="hermes.webp" alt="Dinding Hermes 75x150">
-                <div class="container">
-                    <h4>Dinding Hermes 75x150</h4>
-                </div>
-            </div>
-            <div class="card" onclick="updateWall('MATERIAL/dinding_marble lava 80x80.png')">
-                <img src="marble lava.webp" alt="Dinding Marble Lava 80x80">
-                <div class="container">
-                    <h4>Dinding Marble Lava 80x80</h4>
-                </div>
-            </div>
-            <div class="card" onclick="updateWall('MATERIAL/dinding_prestige marble natural dark grey 90x180.png')">
-                <img src="prestige.webp" alt="Dinding Prestige Marble 90x180">
-                <div class="container">
-                    <h4>Dinding Prestige Marble 90x180</h4>
-                </div>
-            </div>
-            <div class="card" onclick="updateWall('MATERIAL/dinding_reefstone black 60x60.png')">
-                <img src="reefstone.webp" alt="Dinding Reefstone Black 60x60">
-                <div class="container">
-                    <h4>Dinding Reefstone Black 60x60</h4>
-                </div>
-            </div>
-        </div>
-        </div>
-    </div>
-
-    <div id="floor-sidebar" class="sidebar right-sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('floor-sidebar')">&times;</a>
-        <h2>Pilih Lantai:</h2>
-        <div class="tile-options">
-            <div class="card" onclick="updateFloor('MATERIAL/lantai_birmingham 60x120.png')">
-                <img src="birmingham.webp" alt="Lantai Birmingham 60x120">
-                <div class="container">
-                    <h4>Lantai Birmingham 60x120</h4>
-                </div>
-            </div>
-            <div class="card" onclick="updateFloor('MATERIAL/lantai_hermes 75x150.png')">
-                <img src="hermes.webp" alt="Lantai Hermes 75x150">
-                <div class="container">
-                    <h4>Lantai Hermes 75x150</h4>
-                </div>
-            </div>
-            <div class="card" onclick="updateFloor('MATERIAL/lantai_marble lava 80x80.png')">
-                <img src="marble lava.webp" alt="Lantai Marble Lava 80x80">
-                <div class="container">
-                    <h4>Lantai Marble Lava 80x80</h4>
-                </div>
-            </div>
-            <div class="card" onclick="updateFloor('MATERIAL/lantai_prestige marble natural dark grey 90x180.png')">
-                <img src="prestige.webp" alt="Lantai Prestige Marble 90x180">
-                <div class="container">
-                    <h4>Lantai Prestige Marble 90x180</h4>
-                </div>
-            </div>
-            <div class="card" onclick="updateFloor('MATERIAL/lantai_reefstone black 60x60.png')">
-                <img src="reefstone.webp" alt="Lantai Reefstone Black 60x60">
-                <div class="container">
-                    <h4>Lantai Reefstone Black 60x60</h4>
-                </div>
-            </div>
-        </div>
-    </div>
+<body class="index-page">
+	<header id="header" class="header fixed-top">
 
 
-    <div id="main">
-        <div class="container">
-            <img id="room" src="ROOM 1.png" alt="Room">
-            <img id="floor" src="MATERIAL/lantai_birmingham 60x120.png" alt="Floor">
-            <img id="wall" src="MATERIAL/dinding_birmingham 60x120.png" alt="Wall">
-        </div>
-    </div>
+		<div class="branding d-flex align-items-cente">
+			<div class="container position-relative d-flex align-items-center justify-content-between">
+				<a href="index.html" class="logo d-flex align-items-center">
+					<img src="assets/img/Landscape Logo colour WHT.png" alt="" />
+					<span>.</span>
+				</a>
 
-    <script src="script.js"></script>
+				<nav id="navmenu" class="navmenu">
+					<ul>
+						<li>
+							<a href="#hero" class="">Home<br /></a>
+						</li>
+
+						<li><a href="#portfolio">Products</a></li>
+						<li><a href="vizual.html">Visualizer</a></li>
+						<li><a href="#about-us">About Us</a></li>
+						<li><a href="#article">Article</a></li>
+
+					</ul>
+					<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<main class="main">
+		<!-- Hero Section -->
+		<section id="hero">
+			<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+						class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+						aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+						aria-label="Slide 3"></button>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img src="MATERIAL/bcf75757-0368-4a1b-a198-2f0c0ff00129.jpg.webp" class="d-block w-100"
+							alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="MATERIAL/87bf20f5-c44f-42f1-87c4-c7def355e604.jpg.webp" class="d-block w-100"
+							alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="MATERIAL/c81362d7-4807-4502-b591-bc397ffe21ab.jpg.webp" class="d-block w-100"
+							alt="...">
+					</div>
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+					data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+					data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</section>
+		<!-- /Hero Section -->
+
+		<!-- Clients Section -->
+		<section id="clients" class="clients section">
+			<div class="container">
+				<div class="swiper">
+					<script type="application/json" class="swiper-config">
+							{
+								"loop": true,
+								"speed": 600,
+								"autoplay": {
+									"delay": 5000
+								},
+								"slidesPerView": "auto",
+								"pagination": {
+									"el": ".swiper-pagination",
+									"type": "bullets",
+									"clickable": true
+								},
+								"breakpoints": {
+									"320": {
+										"slidesPerView": 2,
+										"spaceBetween": 40
+									},
+									"480": {
+										"slidesPerView": 3,
+										"spaceBetween": 60
+									},
+									"640": {
+										"slidesPerView": 4,
+										"spaceBetween": 80
+									},
+									"992": {
+										"slidesPerView": 6,
+										"spaceBetween": 120
+									}
+								}
+							}
+						</script>
+					<div class="swiper-wrapper align-items-center">
+
+
+						<div class="swiper-slide">
+							<img src="assets/img/BG PUTIH.png" class="img-fluid" alt="" />
+						</div>
+						<div class="swiper-slide">
+							<img src="assets/img/BG PUTIH.png" class="img-fluid" alt="" />
+						</div>
+						<div class="swiper-slide">
+							<img src="assets/img/BG PUTIH.png" class="img-fluid" alt="" />
+						</div>
+						<div class="swiper-slide">
+							<img src="assets/img/BG PUTIH.png" class="img-fluid" alt="" />
+						</div>
+						<div class="swiper-slide">
+							<img src="assets/img/BG PUTIH.png" class="img-fluid" alt="" />
+						</div>
+						<div class="swiper-slide">
+							<img src="assets/img/BG PUTIH.png" class="img-fluid" alt="" />
+						</div>
+						<div class="swiper-slide">
+							<img src="assets/img/BG PUTIH.png" class="img-fluid" alt="" />
+						</div>
+						<div class="swiper-slide">
+							<img src="assets/img/BG PUTIH.png" class="img-fluid" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- /Clients Section -->
+		<!-- Portfolio Section -->
+		<section id="portfolio" class="portfolio section">
+			<!-- Section Title -->
+			<div class="container section-title" data-aos="fade-up">
+				<h2>Our Products</h2>
+
+			</div>
+			<!-- End Section Title -->
+
+			<div class="container">
+				<div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+					<ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+						<li data-filter="*" class="filter-active">
+							All
+						</li>
+						<li data-filter=".filter-concrete">Concrete</li>
+						<li data-filter=".filter-pozzolano">POZZOLANO</li>
+						<li data-filter=".filter-crema">CREMA</li>
+						<li data-filter=".filter-calacatta">CALACATTA</li>
+					</ul>
+					<!-- End Portfolio Filters -->
+
+					<div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-concrete">
+							<div class="portfolio-content h-100">
+								<a href="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-5.jpg"
+									data-gallery="portfolio-gallery-app" class="glightbox"><img
+										src="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-5.jpg"
+										class="img-fluid" alt="" /></a>
+								<div class="portfolio-info">
+									<h4>
+										CONCRETE BONE / Matte
+									</h4>
+								</div>
+							</div>
+						</div>
+						<!-- End Portfolio Item -->
+
+						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+							<div class="portfolio-content h-100">
+								<a href="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-12.jpg"
+									data-gallery="portfolio-gallery-app" class="glightbox"><img
+										src="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-12.jpg"
+										class="img-fluid" alt="" /></a>
+								<div class="portfolio-info">
+									<h4>
+										CONCRETE CAMEL / Matte
+									</h4>
+								</div>
+							</div>
+						</div>
+						<!-- End Portfolio Item -->
+
+						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-crema">
+							<div class="portfolio-content h-100">
+								<a href="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-20.jpg"
+									data-gallery="portfolio-gallery-app" class="glightbox"><img
+										src="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-20.jpg"
+										class="img-fluid" alt="" /></a>
+								<div class="portfolio-info">
+									<h4>
+										CONCRETE CHARCOAL / Matte
+									</h4>
+
+								</div>
+							</div>
+						</div>
+						<!-- End Portfolio Item -->
+
+						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-pozzolano">
+							<div class="portfolio-content h-100">
+								<a href="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-27.jpg"
+									data-gallery="portfolio-gallery-app" class="glightbox"><img
+										src="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-27.jpg"
+										class="img-fluid" alt="" /></a>
+								<div class="portfolio-info">
+									<h4>
+										POZZOLANO GRIS / Matte
+									</h4>
+
+								</div>
+							</div>
+						</div>
+						<!-- End Portfolio Item -->
+
+						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-pozzolano">
+							<div class="portfolio-content h-100">
+								<a href="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-34.jpg"
+									data-gallery="portfolio-gallery-app" class="glightbox"><img
+										src="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-34.jpg"
+										class="img-fluid" alt="" /></a>
+								<div class="portfolio-info">
+									<h4>
+										POZZOLANO NERO / Matte
+									</h4>
+
+								</div>
+							</div>
+						</div>
+						<!-- End Portfolio Item -->
+
+						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-crema">
+							<div class="portfolio-content h-100">
+								<a href="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-41.jpg"
+									data-gallery="portfolio-gallery-app" class="glightbox"><img
+										src="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-41.jpg"
+										class="img-fluid" alt="" /></a>
+								<div class="portfolio-info">
+									<h4>
+										CREMA MARFIL / High Gloss
+									</h4>
+
+								</div>
+							</div>
+						</div>
+						<!-- End Portfolio Item -->
+
+						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-calacatta">
+							<div class="portfolio-content h-100">
+								<a href="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-47.png"
+									data-gallery="portfolio-gallery-app" class="glightbox"><img
+										src="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-47.png"
+										class="img-fluid" alt="" /></a>
+								<div class="portfolio-info">
+									<h4>
+										CALACATTA GOLD / High Gloss
+									</h4>
+
+								</div>
+							</div>
+						</div>
+						<!-- End Portfolio Item -->
+
+						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-calacatta">
+							<div class="portfolio-content h-100">
+								<a href="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-52.jpg"
+									data-gallery="portfolio-gallery-app" class="glightbox"><img
+										src="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-52.jpg"
+										class="img-fluid" alt="" /></a>
+								<div class="portfolio-info">
+									<h4>
+										ARMANI GREY / High Gloss
+									</h4>
+
+								</div>
+							</div>
+						</div>
+						<!-- End Portfolio Item -->
+
+						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-calacatta">
+							<div class="portfolio-content h-100">
+								<a href="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-62-1.png"
+									data-gallery="portfolio-gallery-app" class="glightbox"><img
+										src="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-62-1.png"
+										class="img-fluid" alt="" /></a>
+								<div class="portfolio-info">
+									<h4>
+										CALACATTA / Matte & High Gloss
+									</h4>
+
+								</div>
+							</div>
+						</div>
+						<!-- End Portfolio Item -->
+
+						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-calacatta">
+							<div class="portfolio-content h-100">
+								<a href="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-62-1.png"
+									data-gallery="portfolio-gallery-app" class="glightbox"><img
+										src="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-62-1.png"
+										class="img-fluid" alt="" /></a>
+								<div class="portfolio-info">
+									<h4>
+										CALACATTA / Matte & High Gloss
+									</h4>
+
+								</div>
+							</div>
+						</div>
+						<!-- End Portfolio Item -->
+
+						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-calacatta">
+							<div class="portfolio-content h-100">
+								<a href="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-67.jpg"
+									data-gallery="portfolio-gallery-app" class="glightbox"><img
+										src="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-67.jpg"
+										class="img-fluid" alt="" /></a>
+								<div class="portfolio-info">
+									<h4>
+										HONEY ONYX / High Gloss
+									</h4>
+
+								</div>
+							</div>
+						</div>
+						<!-- End Portfolio Item -->
+
+						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-calacatta">
+							<div class="portfolio-content h-100">
+								<a href="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-67.jpg"
+									data-gallery="portfolio-gallery-app" class="glightbox"><img
+										src="https://eleganzatiles.com/wp-content/uploads/2024/01/export-Rasikbhai-67.jpg"
+										class="img-fluid" alt="" /></a>
+								<div class="portfolio-info">
+									<h4>
+										HONEY ONYX / High Gloss
+									</h4>
+
+								</div>
+							</div>
+						</div>
+						<!-- End Portfolio Item -->
+					</div>
+					<!-- End Portfolio Container -->
+				</div>
+			</div>
+
+		</section>
+		<!-- /Portfolio Section -->
+
+		<!-- Stats Section -->
+		<section id="about-us" class="stats section">
+			<div class="container section-title" data-aos="fade-up">
+				<h2>About Us</h2>
+
+			</div>
+			<div class="container" data-aos="fade-up" data-aos-delay="100">
+				<div class="row gy-4 align-items-center">
+					<div class="col-lg-3">
+						<div class="stats-item d-flex">
+							<i class="bi bi-emoji-smile flex-shrink-0"></i>
+							<div>
+								<span data-purecounter-start="0" data-purecounter-end="1000"
+									data-purecounter-duration="1" class="purecounter"></span>
+								<p><strong>Happy Clients</strong> <span> achieve just that</span></p>
+							</div>
+						</div>
+					</div><!-- End Stats Item -->
+					<div class="col-lg-3">
+						<div class="stats-item d-flex">
+							<i class="bi bi-journal-richtext flex-shrink-0"></i>
+							<div>
+								<span data-purecounter-start="0" data-purecounter-end="521"
+									data-purecounter-duration="1" class="purecounter"></span>
+								<p><strong>Projects</strong> <span>that have been completed</span></p>
+							</div>
+						</div>
+					</div><!-- End Stats Item -->
+					<div class="col-lg-3">
+						<div class="stats-item d-flex">
+							<i class="bi bi-calendar icon"></i>
+							<div>
+								<span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1"
+									class="purecounter"></span>
+								<p><strong>Years of</strong> <span>Experience</span></p>
+							</div>
+						</div>
+					</div><!-- End Stats Item -->
+					<div class="col-lg-3">
+						<div class="stats-item d-flex">
+							<i class="bi bi-shop icon"></i>
+							<div>
+								<span data-purecounter-start="0" data-purecounter-end="111"
+									data-purecounter-duration="1" class="purecounter"></span>
+								<p><strong>Product</strong> <span>Hight Quality</span></p>
+							</div>
+						</div>
+					</div><!-- End Stats Item -->
+
+				</div>
+			</div>
+
+		</section><!-- /Stats Section -->
+		<section id="about" class="about section">
+			<div class="container">
+
+				<div class="row gy-4">
+					<div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+						<h3>Why ELEGANZA Indonesia?</h3>
+						<img src="MATERIAL/bcf75757-0368-4a1b-a198-2f0c0ff00129.jpg.webp"
+							class="img-fluid rounded-4 mb-4" alt="">
+						<p>T. Eleganza Tile Indonesia (“ETI”) was established in 2010. ETI is a subsidiary company of PT
+							Catur Sentosa Adiprana Tbk (ownership percentage of 51%) which supplies high quality
+							porcelain tile, ceramic tile, mosaic, and accessories at affordable prices.
+
+							With a variety of types ranging from Polished, Unpolished, Matte, Rustic, Semi-polished, and
+							Glass & Stone Mosaic, ETI’s product selections are ideal choices for floor, wall, and other
+							applications. ETI offers a wide variety of products that enable customers develop their
+							ideas for both residential and commercial projects.
+
+							ETI works closely with international factories to develop these products while managing
+							logistics supply to ETI’s own warehouse. ETI’s warehouse and showroom in Jakarta are
+							equipped with well-trained staffs that are ready to fulfill customers’ needs. In addition,
+							ETI sells through modern retail outlets, such as Mitra10, Dunia Bangunan, Pasar Keramik,
+							Home Multi, and Norton Store, as well as traditional retail outlets.</p>
+					</div>
+					<div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+						<div class="content ps-0 ps-lg-5">
+							<p class="fst-italic">
+								Dengan ELEGANZA Indonesia dapatkan :
+							</p>
+							<ul>
+								<li><i class="bi bi-check-circle-fill"></i> <span>USA Quality</span></li>
+								<li><i class="bi bi-check-circle-fill"></i> <span>Italian Design</span></li>
+								<li><i class="bi bi-check-circle-fill"></i> <span>Modern Technology</span></li>
+								<li><i class="bi bi-check-circle-fill"></i> <span>Certified Factories For America &
+										Europe Market</span></li>
+								<li><i class="bi bi-check-circle-fill"></i> <span>Premium Quality (Tidak ada barang
+										KW)</span></li>
+							</ul>
+							<p>
+								PT. ELEGANZA TILE INDONESIA
+							</p>
+
+							<div class="position-relative mt-4">
+								<img src="assets/img/ele.png" class="img-fluid rounded-4" alt="">
+								<a href="https://www.youtube.com/watch?v=yKIeFCsgFr8&t=2s"
+									class="glightbox play-btn"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</section><!-- /About Section -->
+		<!-- Testimonials Section -->
+		<section id="testimonials" class="testimonials section">
+			<!-- Section Title -->
+			<div class="container section-title" data-aos="fade-up">
+				<h2>Testimonials</h2>
+
+			</div>
+			<!-- End Section Title -->
+
+			<div class="container" data-aos="fade-up" data-aos-delay="100">
+				<div class="swiper">
+					<script type="application/json" class="swiper-config">
+							{
+								"loop": true,
+								"speed": 600,
+								"autoplay": {
+									"delay": 5000
+								},
+								"slidesPerView": "auto",
+								"pagination": {
+									"el": ".swiper-pagination",
+									"type": "bullets",
+									"clickable": true
+								},
+								"breakpoints": {
+									"320": {
+										"slidesPerView": 1,
+										"spaceBetween": 40
+									},
+									"1200": {
+										"slidesPerView": 3,
+										"spaceBetween": 10
+									}
+								}
+							}
+						</script>
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="testimonial-item">
+								<img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="" />
+								<h3>Saul Goodman</h3>
+								<h4>Ceo &amp; Founder</h4>
+								<div class="stars">
+									<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+										class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+										class="bi bi-star-fill"></i>
+								</div>
+								<p>
+									<i class="bi bi-quote quote-icon-left"></i>
+									<span>pelayanan luar biasa...ada bonusnya...memuaskan...recommended seller..cepat
+										sampai diluar perkiraan...barang banyak Tidak masalah.Terimakasih</span>
+									<i class="bi bi-quote quote-icon-right"></i>
+								</p>
+							</div>
+						</div>
+						<!-- End testimonial item -->
+						<div class="swiper-slide">
+							<div class="testimonial-item">
+								<img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="" />
+								<h3>Sara Wilsson</h3>
+								<h4>Designer</h4>
+								<div class="stars">
+									<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+										class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+										class="bi bi-star-fill"></i>
+								</div>
+								<p>
+									<i class="bi bi-quote quote-icon-left"></i>
+									<span>Puas belanja disini, chat admin kebutuhan luas brp m2 lgsg dihitungin perlu
+										order brp pcs. Kualitas barangnya bagus dan gaada yg cacat. Pengiriman gratis ke
+										bogor 🙏👍 terima.</span>
+									<i class="bi bi-quote quote-icon-right"></i>
+								</p>
+							</div>
+						</div>
+						<!-- End testimonial item -->
+						<div class="swiper-slide">
+							<div class="testimonial-item">
+								<img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="" />
+								<h3>Jena Karlis</h3>
+								<h4>Store Owner</h4>
+								<div class="stars">
+									<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+										class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+										class="bi bi-star-fill"></i>
+								</div>
+								<p>
+									<i class="bi bi-quote quote-icon-left"></i>
+									<span>mosaic tile kualitas rapi dan tebal. warna hijau dark cakep + dipadukan nat
+										3AM green pine</span>
+									<i class="bi bi-quote quote-icon-right"></i>
+								</p>
+							</div>
+						</div>
+						<!-- End testimonial item -->
+						<div class="swiper-slide">
+							<div class="testimonial-item">
+								<img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="" />
+								<h3>Saul Goodman</h3>
+								<h4>Ceo &amp; Founder</h4>
+								<div class="stars">
+									<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+										class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+										class="bi bi-star-fill"></i>
+								</div>
+								<p>
+									<i class="bi bi-quote quote-icon-left"></i>
+									<span>pelayanan luar biasa...ada bonusnya...memuaskan...recommended seller..cepat
+										sampai diluar perkiraan...barang banyak Tidak masalah.Terimakasih</span>
+									<i class="bi bi-quote quote-icon-right"></i>
+								</p>
+							</div>
+						</div>
+						<!-- End testimonial item -->
+						<div class="swiper-slide">
+							<div class="testimonial-item">
+								<img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="" />
+								<h3>Sara Wilsson</h3>
+								<h4>Designer</h4>
+								<div class="stars">
+									<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+										class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+										class="bi bi-star-fill"></i>
+								</div>
+								<p>
+									<i class="bi bi-quote quote-icon-left"></i>
+									<span>Puas belanja disini, chat admin kebutuhan luas brp m2 lgsg dihitungin perlu
+										order brp pcs. Kualitas barangnya bagus dan gaada yg cacat. Pengiriman gratis ke
+										bogor 🙏👍 terima.</span>
+									<i class="bi bi-quote quote-icon-right"></i>
+								</p>
+							</div>
+						</div>
+						<!-- End testimonial item -->
+						<div class="swiper-slide">
+							<div class="testimonial-item">
+								<img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="" />
+								<h3>Jena Karlis</h3>
+								<h4>Store Owner</h4>
+								<div class="stars">
+									<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+										class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+										class="bi bi-star-fill"></i>
+								</div>
+								<p>
+									<i class="bi bi-quote quote-icon-left"></i>
+									<span>mosaic tile kualitas rapi dan tebal. warna hijau dark cakep + dipadukan nat
+										3AM green pine</span>
+									<i class="bi bi-quote quote-icon-right"></i>
+								</p>
+							</div>
+						</div>
+						<!-- End testimonial item -->
+
+
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+		</section>
+		<!-- /Testimonials Section -->
+
+
+		<!-- Recent Posts Section -->
+		<section id="article" class="recent-posts section">
+
+			<!-- Section Title -->
+			<div class="container section-title" data-aos="fade-up">
+				<h2>Article</h2>
+			</div><!-- End Section Title -->
+
+			<div class="container">
+
+				<div class="row gy-4">
+					<div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+						<article>
+							<div class="post-img">
+								<img src="MATERIAL/c81362d7-4807-4502-b591-bc397ffe21ab.jpg.webp" alt=""
+									class="img-fluid">
+							</div>
+							<div class="d-flex align-items-center">
+								<div class="post-meta">
+									<p class="post-date">
+										<time datetime="2022-01-01">11:11 PM</time>
+									</p>
+									<p class="post-date">
+										<time datetime="2022-01-01">Friday <span><svg class="circle"
+													xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+													<circle cx="8" cy="8" r="8" />
+												</svg></span>
+											<span>June 7, 2024</span></time>
+									</p>
+								</div>
+							</div>
+
+							<h2 class="title">
+								<a href="blog-details.html">7 Cara Memilih Keramik yang cocok untuk warna tembok rumah
+									anda</a>
+							</h2>
+
+
+
+						</article>
+					</div><!-- End post list item -->
+					<div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+						<article>
+
+							<div class="post-img">
+								<img src="MATERIAL/bcf75757-0368-4a1b-a198-2f0c0ff00129.jpg.webp" alt=""
+									class="img-fluid">
+							</div>
+
+							<div class="d-flex align-items-center">
+								<div class="post-meta">
+									<p class="post-date">
+										<time datetime="2022-01-01">11:11 PM</time>
+									</p>
+									<p class="post-date">
+										<time datetime="2022-01-01">Friday <span><svg class="circle"
+													xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+													<circle cx="8" cy="8" r="8" />
+												</svg></span>
+											<span>June 7, 2024</span></time>
+									</p>
+								</div>
+							</div>
+
+							<h2 class="title">
+								<a href="blog-details.html">CALLACATA : Jenis keramik yang pas untuk ruang makan</a>
+							</h2>
+
+
+
+						</article>
+					</div><!-- End post list item -->
+					<div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+						<article>
+
+							<div class="post-img">
+								<img src="MATERIAL/87bf20f5-c44f-42f1-87c4-c7def355e604.jpg.webp" alt=""
+									class="img-fluid">
+							</div>
+
+							<div class="d-flex align-items-center">
+								<div class="post-meta">
+									<p class="post-date">
+										<time datetime="2022-01-01">11:11 PM</time>
+									</p>
+									<p class="post-date">
+										<time datetime="2022-01-01">Friday <span><svg class="circle"
+													xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+													<circle cx="8" cy="8" r="8" />
+												</svg></span>
+											<span>June 7, 2024</span></time>
+									</p>
+								</div>
+							</div>
+
+							<h2 class="title">
+								<a href="blog-details.html">Eleganza Indonesia Memberikan Potongan 50% bagi setiap
+									pembelian </a>
+							</h2>
+
+
+
+						</article>
+					</div><!-- End post list item -->
+
+
+				</div><!-- End recent posts list -->
+
+			</div>
+
+		</section><!-- /Recent Posts Section -->
+
+	</main>
+
+	<footer id="footer" class="footer">
+		<div class="container footer-top">
+			<div class="row gy-4">
+				<div class="col-lg-4 col-md-12 footer-about">
+					<img src="assets/img/Landscape Logo colour WHT.png" alt="footer-logo" style="max-width: 200px;">
+					<!-- <a href="index.html" class="logo d-flex align-items-center">
+						<span class="sitename">Eleganza Indonesia</span>
+					</a> -->
+					<p class="mt-2">
+						Eleganza Tile Indonesia is a leading distributor of granit tiles in Indonesia.
+						Hight Quality and
+						Modern Technology
+					</p>
+					<div class="social-links d-flex mt-4">
+						<a href=""><i class="bi bi-twitter-x"></i></a>
+						<a href=""><i class="bi bi-facebook"></i></a>
+						<a href=""><i class="bi bi-instagram"></i></a>
+						<a href=""><i class="bi bi-linkedin"></i></a>
+					</div>
+				</div>
+
+				<div class="col-lg-2 col-6 footer-links">
+					<h4>Useful Links</h4>
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About us</a></li>
+						<li><a href="#">Services</a></li>
+						<li><a href="#">Terms of service</a></li>
+						<li><a href="#">Privacy policy</a></li>
+					</ul>
+				</div>
+
+
+
+				<div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+					<h4>Contact Us</h4>
+					<p>Jl. Lkr. Luar Barat No.108, Kembangan </p>
+					<p>Jakarta 11610</p>
+					<p>Indonesia</p>
+					<p class="mt-4">
+						<strong>Phone:</strong> <span>+628 3872 299 892</span>
+					</p>
+					<p><strong>Email:</strong> <span>eleganzatilesindo@gmail.com</span></p>
+				</div>
+
+				<div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+					<div class="mb-5">
+
+						<iframe style="width: 100%; height: 200px;"
+							src="//www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5490795038786!2d106.73704487482875!3d-6.191038093796589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f64517476623%3A0xa0c3fbf63e13e4b8!2sPT.%20Eleganza%20Tile%20Indonesia!5e0!3m2!1sen!2sus!4v1717698592584!5m2!1sen!2sus"
+							frameborder="0" allowfullscreen=""></iframe>
+					</div><!-- End Google Maps -->
+				</div>
+			</div>
+		</div>
+
+		<div class="container copyright text-center mt-4">
+			<p>
+				© <span>Copyright 2024</span>
+				<strong class="px-1 sitename">Eleganza Indonesia</strong>
+				<span>All Rights Reserved</span>
+			</p>
+		</div>
+	</footer>
+
+	<!-- Scroll Top -->
+	<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+			class="bi bi-arrow-up-short"></i></a>
+
+	<!-- Preloader -->
+	<div id="preloader"></div>
+
+	<!-- Vendor JS Files -->
+	<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/vendor/php-email-form/validate.js"></script>
+	<script src="assets/vendor/aos/aos.js"></script>
+	<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+	<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+	<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+	<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+	<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+	<!-- Main JS File -->
+	<script src="assets/js/main.js"></script>
 </body>
 
 </html>

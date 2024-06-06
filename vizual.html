@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Visualizer</h1>
+    </header>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <span class="nav-toggle" onclick="toggleNav('wall-sidebar')">Ganti Wall</span>
+        </div>
+        <div class="nav-right">
+            <span class="nav-toggle" onclick="toggleNav('floor-sidebar')">Ganti Floor</span>
+        </div>
+    </nav>
+
+    <div id="wall-sidebar" class="sidebar left-sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('floor-sidebar')">&times;</a>
+        <h2>Pilih Lantai:</h2>
+        <div class="tile-options">
+            <div class="card" onclick="updateWall('MATERIAL/dinding_birmingham 60x120.png')">
+                <img src="birmingham.webp" alt="Dinding Birmingham 60x120">
+                <div class="container">
+                    <h4>Dinding Birmingham 60x120</h4>
+                </div>
+            </div>
+            <div class="card" onclick="updateWall('MATERIAL/dinding_hermes 75x150.png')">
+                <img src="hermes.webp" alt="Dinding Hermes 75x150">
+                <div class="container">
+                    <h4>Dinding Hermes 75x150</h4>
+                </div>
+            </div>
+            <div class="card" onclick="updateWall('MATERIAL/dinding_marble lava 80x80.png')">
+                <img src="marble lava.webp" alt="Dinding Marble Lava 80x80">
+                <div class="container">
+                    <h4>Dinding Marble Lava 80x80</h4>
+                </div>
+            </div>
+            <div class="card" onclick="updateWall('MATERIAL/dinding_prestige marble natural dark grey 90x180.png')">
+                <img src="prestige.webp" alt="Dinding Prestige Marble 90x180">
+                <div class="container">
+                    <h4>Dinding Prestige Marble 90x180</h4>
+                </div>
+            </div>
+            <div class="card" onclick="updateWall('MATERIAL/dinding_reefstone black 60x60.png')">
+                <img src="reefstone.webp" alt="Dinding Reefstone Black 60x60">
+                <div class="container">
+                    <h4>Dinding Reefstone Black 60x60</h4>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div id="floor-sidebar" class="sidebar right-sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('floor-sidebar')">&times;</a>
+        <h2>Pilih Lantai:</h2>
+        <div class="tile-options">
+            <div class="card" onclick="updateFloor('MATERIAL/lantai_birmingham 60x120.png')">
+                <img src="birmingham.webp" alt="Lantai Birmingham 60x120">
+                <div class="container">
+                    <h4>Lantai Birmingham 60x120</h4>
+                </div>
+            </div>
+            <div class="card" onclick="updateFloor('MATERIAL/lantai_hermes 75x150.png')">
+                <img src="hermes.webp" alt="Lantai Hermes 75x150">
+                <div class="container">
+                    <h4>Lantai Hermes 75x150</h4>
+                </div>
+            </div>
+            <div class="card" onclick="updateFloor('MATERIAL/lantai_marble lava 80x80.png')">
+                <img src="marble lava.webp" alt="Lantai Marble Lava 80x80">
+                <div class="container">
+                    <h4>Lantai Marble Lava 80x80</h4>
+                </div>
+            </div>
+            <div class="card" onclick="updateFloor('MATERIAL/lantai_prestige marble natural dark grey 90x180.png')">
+                <img src="prestige.webp" alt="Lantai Prestige Marble 90x180">
+                <div class="container">
+                    <h4>Lantai Prestige Marble 90x180</h4>
+                </div>
+            </div>
+            <div class="card" onclick="updateFloor('MATERIAL/lantai_reefstone black 60x60.png')">
+                <img src="reefstone.webp" alt="Lantai Reefstone Black 60x60">
+                <div class="container">
+                    <h4>Lantai Reefstone Black 60x60</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="main">
+        <div class="container">
+            <img id="room" src="ROOM 1.png" alt="Room">
+            <img id="floor" src="MATERIAL/lantai_birmingham 60x120.png" alt="Floor">
+            <img id="wall" src="MATERIAL/dinding_birmingham 60x120.png" alt="Wall">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
