@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #8f6732;
     color: white;
     text-align: center;
     padding: 5px;
@@ -19,7 +19,7 @@ header {
 
 .navbar {
     overflow: hidden;
-    background-color: #444;
+    background-color: #8f6732;
     position: fixed;
     top:80px;
     width: 100%;
@@ -45,7 +45,7 @@ header {
 }
 
 .nav-toggle:hover {
-    background-color: #555;
+    background-color: #8f5100;
 }
 
 /* Sidebar styles */
@@ -55,7 +55,7 @@ header {
     position: fixed;
     z-index: 1;
     top: 135px; /* Below the header and navbar */
-    background-color: #111;
+    background-color: #8f6732;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 20px;
