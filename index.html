@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Floor & Wall Visualizer</title>
+		<link
+			rel="stylesheet"
+			href="styles.css"
+		/>
+	</head>
+	<body>
+		<header>
+			<h1>Floor & Wall Visualizer</h1>
+		</header>
+		<div class="controls">
+			<div class="control-group">
+				<label for="floor-select">Pilih Lantai:</label>
+				<select
+					id="floor-select"
+					class="custom-select"
+				>
+					<option value="">Pilih Lantai</option>
+					<option value="MATERIAL/lantai_birmingham 60x120.png">
+						Lantai Birmingham 60x120
+					</option>
+					<option value="MATERIAL/lantai_hermes 75x150.png">
+						Lantai Hermes 75x150
+					</option>
+					<option value="MATERIAL/lantai_marble lava 80x80.png">
+						Lantai Marble Lava 80x80
+					</option>
+					<option
+						value="MATERIAL/lantai_prestige marble natural dark grey 90x180.png"
+					>
+						Lantai Prestige Marble Natural Dark Grey 90x180
+					</option>
+					<option value="MATERIAL/lantai_reefstone black 60x60.png">
+						Lantai Reefstone 60x60
+					</option>
+				</select>
+			</div>
+			<div class="control-group">
+				<label for="wall-select">Pilih Dinding:</label>
+				<select
+					id="wall-select"
+					class="custom-select"
+				>
+					<option value="">Pilih Dinding</option>
+					<option value="MATERIAL/dinding_birmingham 60x120.png">
+						Dinding Birmingham 60x120
+					</option>
+					<option value="MATERIAL/dinding_hermes 75x150.png">
+						Dinding Hermes 75x150
+					</option>
+					<option value="MATERIAL/dinding_marble lava 80x80.png">
+						Dinding Marble Lava 80x80
+					</option>
+					<option
+						value="MATERIAL/dinding_prestige marble natural dark grey 90x180.png"
+					>
+						Dinding Prestige Marble Natural Dark Grey 90x180
+					</option>
+					<option value="MATERIAL/dinding_reefstone black 60x60.png">
+						Dinding Reefstone 60x60
+					</option>
+				</select>
+			</div>
+			<button
+				id="reset-button"
+				class="reset-button"
+			>
+				Reset
+			</button>
+		</div>
+		<div class="container">
+			<img
+				id="room"
+				src="ROOM 1.png"
+				alt="Room"
+			/>
+			<img
+				id="floor"
+				alt=""
+			/>
+			<img
+				id="wall"
+				alt=""
+			/>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
