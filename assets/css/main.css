@@ -28,7 +28,7 @@
 	--default-color: #222222;
 
 	/* Heading Color - This color is used for titles, headings and secondary elements. */
-	--heading-color: #9abd97;
+	--heading-color: #babd97;
 
 	/* Accent Color - This is the main accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out. */
 	--accent-color: #8f6732;
@@ -43,7 +43,7 @@
 	--nav-color: #ffffff;
 
 	/* Nav Hover Color - This color is applied to main navmenu links when they are hovered over. */
-	--nav-hover-color: #f85a40;
+	--nav-hover-color: #fff;
 
 	/* Nav Dropdown Background Color - This color is used as the background for dropdown boxes that appear when hovering over primary navigation items. */
 	--nav-dropdown-background-color: #ffffff;
@@ -2796,6 +2796,7 @@ section,
 	font-style: italic;
 	font-size: 14px;
 	color: color-mix(in srgb, var(--default-color), transparent 50%);
+	
 }
 
 .tags-widget {
@@ -2833,4 +2834,11 @@ section,
 	color: color-mix(in srgb, var(--default-color), transparent 60%);
 	font-size: 14px;
 }
-/* carousel */
+.icon-small {
+	font-size: 16px; /* Ukuran ikon kecil */
+}
+.circle {
+	width: 8px;
+	height: 8px;
+	fill: #D2B48C; /* Warna coklat cerah */
+}
